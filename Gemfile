@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,12 +40,19 @@ gem 'spring',        group: :development
 
 
 # Herokuの本番(production)環境ではPostgresqlを使用する
-gem 'sqlite3', :group => [:development, :test]
-gem 'pg', :group => [:production]
+# gem 'sqlite3', :group => [:development, :test]
+# gem 'pg', :group => [:production]
 
-# コメントアウト
-gem 'therubyracer', platforms: :ruby
+# # コメントアウト
+# gem 'therubyracer', platforms: :ruby
 
 
+# group :production do
+#   gem 'pg'
+# end
 
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
